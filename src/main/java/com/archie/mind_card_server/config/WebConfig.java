@@ -18,7 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
         log.info("配置跨域访问");
         
         registry.addMapping("/**")
-                .allowedOriginPatterns("*")
+                .allowedOriginPatterns("*") // 使用allowedOriginPatterns而不是allowedOrigins
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)

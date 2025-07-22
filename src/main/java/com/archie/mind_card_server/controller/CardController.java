@@ -19,10 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/cards")
+@RequestMapping("/cards")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class CardController {
     
     private final CardService cardService;

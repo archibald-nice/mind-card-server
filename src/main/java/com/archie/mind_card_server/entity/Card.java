@@ -43,7 +43,7 @@ public class Card {
     
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private CardStatus status = CardStatus.ACTIVE;
+    private CardStatus status = CardStatus.DRAFT;
     
     @Size(max = 20, message = "颜色代码长度不能超过20个字符")
     @Column(length = 20)
@@ -78,29 +78,7 @@ public class Card {
     private LocalDateTime deletedAt;
     
     public enum CardStatus {
-        ACTIVE, ARCHIVED, DELETED
+        DRAFT, PUBLISHED, ARCHIVED, ACTIVE, DELETED
     }
     
-    public enum Priority {
-        LOW(0), MEDIUM(1), HIGH(2);
-        
-        private final int value;
-        
-        Priority(int value) {
-            this.value = value;
-        }
-        
-        public int getValue() {
-            return value;
-        }
-        
-        public static Priority fromValue(int value) {
-            for (Priority priority : Priority.values()) {
-                if (priority.value == value) {
-                    return priority;
-                }
-            }
-            return LOW;
-        }
-    }
 }
